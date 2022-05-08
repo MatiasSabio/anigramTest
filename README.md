@@ -1,2 +1,2 @@
-# catgram
-intagram of cats
+# Anigram
+intagram of animals
