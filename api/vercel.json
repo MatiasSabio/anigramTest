@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "name": "petgram-server",
-  "alias": ["petgram-api"],
-  "builds": [{ "src": "index.js", "use": "@now/node" }],
+  "name": "anigram",
+  "alias": ["anigram"],
+  "builds": [{ "src": "index.js", "use": "@vercel/node" }],
   "routes": [{
     "headers": {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "off",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
     },
