@@ -1,13 +1,13 @@
 import React from "react";
-import {Category} from '../Category'
+import {PhotoCard} from '../PhotoCard'
 import { List } from "./styles";
 import { Item } from "./styles";
 import db from "../../../api/db.json"
 
-export const ListOfCategories =()=>{
+export const ListOfPhotoCards =()=>{
   return(
     <List>{
-      db.categories.map(category => <Item key={category.id}><Category {...category} /></Item> )
+      [1,2,3,4,5].map(id => <Item key={id}><PhotoCard /></Item> )
       }
     </List>
   )
