@@ -5,51 +5,45 @@ export const Article = styled.article`
 position: relative;
 display: flex;
 flex-direction: column;
+/* border: 1px solid rgba(200,200,200,0.3); */
 ${fadeIn()}
+`
+export const User = styled.div`
+width: 100%;
+color: rgba(200,200,200,0.7);
+display: grid;
+grid-template-columns: auto 40px;
+align-items: center;
+padding: 10px;
 `
 export const A = styled.a`
 text-decoration: none;
 color: rgba(200,200,200,0.7);
 display: flex;
 align-items: center;
-
-`
-
-
-export const User = styled.div`
-width: 100%;
-color: rgba(200,200,200,0.7);
-display: grid;
-grid-template-columns: auto 40px;
-text-decoration: none;
-align-items: center;
-padding: 10px;
-
 `
 export const ImgUser = styled.img`
-
 height: 50px;
 width: 50px;
 border-radius: 50%;
 object-fit: cover;
-border: 2px solid rgba(200,200,200,0.7);
+
+transition: 1s;
 :hover{
-  border: 2px solid pink;
+  transition: 1s;
+  border-color: pink;
+  transform: scale(1.15);
 }
 `
 export const UserP = styled.p`
 font-size: large;
-justify-content:center;
+margin-left: 10px;
 `
 export const Options = styled.div` 
 :hover{
   color: white;
 }
-
- `       
-
-
-
+ `
 export const ImgWrapper = styled.div`
 height: 0;
 overflow: hidden;
@@ -58,9 +52,7 @@ position: relative;
 width: 100%;
 `
 export const Img = styled.img`
-
 height: 100%;
-/* box-shadow: 10px 10px 14px rgba(0,0,0, 10); */
 object-fit: cover;
 position: absolute;
 top: 0px;
@@ -68,6 +60,7 @@ width: 100%;
 `
 export const LikeButton = styled.button`
 padding-top: 10px;
+padding-left: 10px;
 color: rgba(200,200,200,0.7);
 display: flex;
 align-items: center;
@@ -82,10 +75,14 @@ padding-top: 10px;
 color: rgba(200,200,200,0.7);
 display: flex;
 align-items: center;
+transform: rotateZ(5deg);
+transition: 1s;
 & svg {
   margin-right: 10px;
 }
 :hover{
+  transition: 1s;
+  transform: rotateZ(-10deg);
   color: lightblue;
 }
 `

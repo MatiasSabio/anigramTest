@@ -6,6 +6,11 @@ flex-direction: column;
 /* text-align: center; */
 text-decoration: none;
 position: relative;
+transition: 1s;
+:hover{
+  transition: 1s;
+  transform: scale(1.15);
+  }
 `
 export const Image = styled.img`
 border: 1px solid #ddd;

@@ -31,10 +31,8 @@ export const PhotoCard = ({id, likes=0,src})=>{
           </A>
           <Options>
           <MdOutlineMoreHoriz size="35px" />
-          </Options>
-          
-        </User>
-      
+          </Options>          
+        </User>      
       <a href={`/detail/${id}`}>
         <ImgWrapper>
           <Img src= {IMG} />

@@ -1,14 +1,14 @@
 import React from 'react';
-import { ListOfCategories } from "./components/ListOfCategories"
 import { GlobalStyle } from './styles/GlobalStyles';
-import { ListOfPhotoCards } from './components/ListOfPhotoCards';
-import{Logo} from './components/Logo';
+import { Body } from './components/Body';
+import { NavBar } from './components/NavBar';
+import { FootBar } from './components/FootBar';
 
 export const App = () => ( 
   <div id="global">
     <GlobalStyle/>
-    <Logo/>
-<ListOfCategories/> 
-    <ListOfPhotoCards/>
+    <NavBar/>
+    <Body/>
+    <FootBar/>
   </div>
 )
