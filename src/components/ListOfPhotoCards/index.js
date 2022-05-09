@@ -5,9 +5,10 @@ import { Item } from "./styles";
 import db from "../../../api/db.json"
 
 export const ListOfPhotoCards =()=>{
+  const photos= db.photos
   return(
     <List>{
-      [1,2,3,4,5].map(id => <Item key={id}><PhotoCard /></Item> )
+      photos.map(photo => <Item key={photo.id}><PhotoCard {...photo} /></Item> )
       }
     </List>
   )

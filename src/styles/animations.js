@@ -29,7 +29,7 @@ const slideInkeyframes = keyframes`
 
   }`
 
-export const fadeIn = ({time='1s', type='ease'}={})=>{
+export const fadeIn = ({time='2s', type='ease'}={})=>{
   return css`animation: ${time} ${fadeInKeyframes} ${type};`
 }
 export const slideIn = ({time='2s', type='ease'}={})=>{

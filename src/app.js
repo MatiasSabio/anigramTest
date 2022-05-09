@@ -5,7 +5,7 @@ import { NavBar } from './components/NavBar';
 import { FootBar } from './components/FootBar';
 
 export const App = () => ( 
-  <div id="global">
+  <div id='global'>
     <GlobalStyle/>
     <NavBar/>
     <Body/>

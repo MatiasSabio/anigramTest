@@ -26,8 +26,8 @@ export const PhotoCard = ({id, likes=0,src})=>{
     <Article>     
         <User>
           <A href={`/user/${id}`}>
-          <ImgUser src= {IMG} />
-          <UserP>El_User_Fulanito</UserP>
+          <ImgUser src= {src} />
+          <UserP>User_Fulanito</UserP>
           </A>
           <Options>
           <MdOutlineMoreHoriz size="35px" />
@@ -35,7 +35,7 @@ export const PhotoCard = ({id, likes=0,src})=>{
         </User>      
       <a href={`/detail/${id}`}>
         <ImgWrapper>
-          <Img src= {IMG} />
+          <Img src= {src} />
         </ImgWrapper>
       </a>
         <Div>
