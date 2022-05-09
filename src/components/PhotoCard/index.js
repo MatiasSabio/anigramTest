@@ -1,29 +1,23 @@
-import React from "react";
+import React,{Fragment} from "react";
 const IMG = "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-import { ImgWrapper } from "./styles";
-import { Img } from "./styles";
-import { LikeButton } from "./styles";
-import { SendButton } from "./styles";
-import {MdFavoriteBorder} from 'react-icons/md'
-import {MdOutlineNearMe} from 'react-icons/md'
-import {MdOutlineMoreHoriz} from 'react-icons/md'
-import { Article } from "./styles";
-import { Div } from "./styles";
-import { Span } from "./styles";
-import { P } from "./styles";
-import { User } from "./styles";
-import { ImgUser } from "./styles";
-import { UserP } from "./styles";
-import { Options } from "./styles";
-import { A } from "./styles";
+import {MdFavoriteBorder ,MdOutlineNearMe ,MdOutlineMoreHoriz } from 'react-icons/md'
+import {
+  Img, ImgWrapper, SendButton, LikeButton,
+   Article, Div, Span, P, User, 
+   ImgUser, UserP, Options, A } from "./styles";
+import { LazyDazy } from "../../Hooks/CustomHooks";
 
 
 const date= new Date
 const dateComplete =` ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 console.log(dateComplete);
 export const PhotoCard = ({id, likes=0,src})=>{
+  const{element,show} = LazyDazy()
+ 
+  
   return(
-    <Article>     
+    <Article ref={element}>   
+    {show && <Fragment>
         <User>
           <A href={`/user/${id}`}>
           <ImgUser src= {src} />
@@ -49,8 +43,9 @@ export const PhotoCard = ({id, likes=0,src})=>{
         <Span>
           liked by {likes } aniloves!!
           <P>{dateComplete}</P>    
-
         </Span>
+      </Fragment> } 
     </Article>
   )
 } 
+

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Anchor } from './styles';
-import { Image } from './styles';
-import { Div } from './styles';
+import { Anchor, Image, Div } from './styles';
+
 
 
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
@@ -10,8 +9,8 @@ const state = useState;
 const [fixedCategory, setFixedCategory] = state(false);
  return ( 
    <Anchor onClick={()=>{setFixedCategory(!fixedCategory)}}  >
-    <Image className={fixedCategory? 'fixedCategory': ''} src={cover}/>
-    <Div className={fixedCategory? 'fixedCategory': ''}>{emoji}</Div>
+    <Image fixedCategory={fixedCategory} src={cover}/>
+    <Div fixedCategory={fixedCategory}>{emoji}</Div>
   </Anchor>  
 
 )

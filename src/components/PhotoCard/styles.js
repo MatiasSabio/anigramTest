@@ -5,6 +5,8 @@ export const Article = styled.article`
 position: relative;
 display: flex;
 flex-direction: column;
+min-height: 100px;
+
 /* border: 1px solid rgba(200,200,200,0.3); */
 ${fadeIn()}
 `

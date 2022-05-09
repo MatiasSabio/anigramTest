@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled ,{ css } from 'styled-components'
 
 export const Anchor = styled.a`
 display: flex;
@@ -25,20 +25,22 @@ export const Image = styled.img`
   width: 75px; 
   margin: 5px;
   transition :1s ;
-  &.fixedCategory{
+  ${ props => props.fixedCategory && css`{
     border: 4px solid lightblue;
     transition :1s ;
-    transform: scale(1.2);    
-  } 
+    transform: scale(1.2);
+  }`
+  }
+  
 `
 export const Div = styled.div`
 z-index: 100;
 position:absolute;
-left:30px;
+left:32.5px;
 top:-5px;
 transition :1s ;
-&.fixedCategory{ 
+${ props => props.fixedCategory && css`{ 
   transition :1s ;
     transform: scale(1.8);    
-  } 
-`
+  }`
+}`
