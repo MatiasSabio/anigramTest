@@ -1,19 +1,22 @@
 import React,{Fragment} from "react";
 const IMG = "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-import {MdFavoriteBorder ,MdOutlineNearMe ,MdOutlineMoreHoriz } from 'react-icons/md'
+import {MdFavoriteBorder ,MdOutlineNearMe ,MdOutlineMoreHoriz, MdFavorite } from 'react-icons/md'
 import {
   Img, ImgWrapper, SendButton, LikeButton,
    Article, Div, Span, P, User, 
    ImgUser, UserP, Options, A } from "./styles";
-import { LazyDazy } from "../../Hooks/CustomHooks";
-
+   import { useLazyd } from "../../Hooks/useLazyd";
+   import { useLocalStorage } from "../../Hooks/useLocalStorage";
+   
 
 const date= new Date
 const dateComplete =` ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-console.log(dateComplete);
 export const PhotoCard = ({id, likes=0,src})=>{
-  const{element,show} = LazyDazy()
- 
+  const key = `like-${id}`;
+  const{element,show} = useLazyd()
+  const [liked , setLiked]= useLocalStorage(key, false)
+  const Like = liked ? MdFavorite : MdFavoriteBorder
+
   
   return(
     <Article ref={element}>   
@@ -33,15 +36,15 @@ export const PhotoCard = ({id, likes=0,src})=>{
         </ImgWrapper>
       </a>
         <Div>
-          <LikeButton>
-            <MdFavoriteBorder size="32px"/> 
+          <LikeButton onClick={()=>setLiked(!liked)} liked={liked}>
+            <Like size="32px"/> 
           </LikeButton>
           <SendButton>
             <MdOutlineNearMe size="32px"/>
           </SendButton>
         </Div>      
         <Span>
-          liked by {likes } aniloves!!
+          liked by {likes } anilovers!!
           <P>{dateComplete}</P>    
         </Span>
       </Fragment> } 

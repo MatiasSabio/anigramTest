@@ -1,11 +1,11 @@
 import React , {useEffect, useState, Fragment}from "react";
 import {Category} from '../Category'
 import { List, Item } from "./styles";
-import { getCategories } from "../../Hooks/CustomHooks";
+import { useGetCategories } from "../../Hooks/useGetCategories";
 
 export const ListOfCategories =()=>{
   const [showFixed, setShowFixed]=useState(false)
-  const {categories, loading} = getCategories()
+  const {categories, loading} = useGetCategories()
 useEffect(()=>{
   const onScroll =(e)=>{
     const newShowFixed = window.scrollY > 250

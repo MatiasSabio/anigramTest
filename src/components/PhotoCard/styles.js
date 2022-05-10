@@ -1,5 +1,5 @@
-import styled, {keyframes} from 'styled-components'
-import { fadeIn } from '../../styles/animations'
+import styled, {css} from 'styled-components'
+import { fadeIn, big } from '../../styles/animations'
 
 export const Article = styled.article`
 position: relative;
@@ -71,7 +71,15 @@ align-items: center;
 }
 :hover{
   color: pink;
-}`
+}
+${props => props.liked && css`
+color: rgba(350, 100, 350, 1);
+transform: scale(1.1);
+transition: 2s;
+${big()};
+`}
+
+`
 export const SendButton = styled.button`
 padding-top: 10px;
 color: rgba(200,200,200,0.7);

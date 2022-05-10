@@ -13,6 +13,18 @@ to{
   margin-top: 0%;
 
 }`
+const bigKeyframes = keyframes`
+from{
+  
+  transform: scale(1.5);
+  opacity: 0;
+  transition: 2s;
+}
+to{
+  transform: scale(1.1);
+  opacity: 1;
+  transition: 2s;
+}`
 const sladeDownKeyframes = keyframes`
 from{
   border: none;
@@ -48,6 +60,9 @@ const slideInkeyframes = keyframes`
 
 export const fadeIn = ({time='2s', type='ease'}={})=>{
   return css`animation: ${time} ${fadeInKeyframes} ${type};`
+}
+export const big = ({time='2s', type='ease'}={})=>{
+  return css`animation: ${time} ${bigKeyframes} ${type};`
 }
 export const slidedown = ({time='3s', type='ease'}={})=>{
   return css`animation: ${time} ${sladeDownKeyframes} ${type};`

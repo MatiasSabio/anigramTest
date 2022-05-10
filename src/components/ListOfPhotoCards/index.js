@@ -8,7 +8,7 @@ export const ListOfPhotoCards =()=>{
   const photos= db.photos
   return(
     <List>{
-      photos.map(photo => <Item key={photo.id}><PhotoCard {...photo} /></Item> )
+      photos.map(photo => <Item key={photo.id}><PhotoCard {...photo} id={photo.id} /></Item> )
       }
     </List>
   )
