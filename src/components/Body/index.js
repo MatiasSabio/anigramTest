@@ -6,6 +6,6 @@ import { BodyDiv } from './styles';
 export const Body = () => ( 
   <BodyDiv>
     <ListOfCategories/> 
-    <ListOfPhotoCards/>
+    <ListOfPhotoCards categoryId={3}/>
    </BodyDiv>
 )
